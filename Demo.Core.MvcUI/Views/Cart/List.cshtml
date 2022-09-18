@@ -1,0 +1,29 @@
+﻿
+@model Demo.Core.MvcUI.Models.CartListViewModel
+@{
+    ViewData["Title"] = "List";
+    Layout = "~/Views/_Layout.cshtml";
+}
+
+<h2>Your Cart</h2>
+
+<table class="table">
+    <tr>
+        <td>Product Name</td>
+        <td>Unit Price</td>
+        <td>Unit In Stock</td>
+        <td>Quantity</td>
+    </tr>
+
+    @foreach (var item in Model.Cart.CartLine)
+    {
+        <tr>
+        <td>@item.Products.ProductName</td>
+        <td>@item.Products.UnitPrice</td>
+        <td>@item.Products.UnitsInStock</td>
+        <td>@item.Quantity</td>
+        </tr>
+    }
+
+</table>
+

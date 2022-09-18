@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v2.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v2.1": {
+      "Demo.Core.Entities/1.0.0": {
+        "dependencies": {
+          "Demo.Core": "1.0.0"
+        },
+        "runtime": {
+          "Demo.Core.Entities.dll": {}
+        }
+      },
+      "Demo.Core/1.0.0": {
+        "runtime": {
+          "Demo.Core.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Demo.Core.Entities/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Demo.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

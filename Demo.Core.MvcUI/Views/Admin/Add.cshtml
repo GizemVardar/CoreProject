@@ -1,0 +1,45 @@
+﻿@using System.Threading.Tasks;
+@using Demo.Core.MvcUI.Models;
+@model Demo.Core.MvcUI.Models.ProductAddViewModel;
+@{
+    ViewData["Title"] = "Add";
+    Layout = "~/Views/AdminLayout.cshtml";
+}
+
+<h2>Add a new product</h2>
+<form asp-controller="Admin" asp-action="Add" method="post">
+    <div class="form-group">
+        <div class="col-md-8">
+        <label asp-for="Products.ProductName"></label>
+        <input asp-for="Products.ProductName" class="form-group" placeholder="Product Name"/>
+        <span asp-validation-for="Products.ProductName"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-8">
+        <label asp-for="Products.CategoryID"></label>
+        <select asp-for="Products.CategoryID" class="form-control" asp-items="@(new SelectList(Model.Categories,"CategoryID","CategoryName"))"></select>
+        <span asp-validation-for="Products.CategoryID"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-8">
+        <label asp-for="Products.UnitPrice"></label>
+        <input asp-for="Products.UnitPrice" class="form-group" placeholder="Unit Price"/>
+        <span asp-validation-for="Products.UnitPrice"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-8">
+        <label asp-for="Products.UnitsInStock"></label>
+        <input asp-for="Products.UnitsInStock" class="form-group" placeholder="Product Name"/>
+        <span asp-validation-for="Products.UnitsInStock"></span>
+        </div>
+    </div>
+    <input type="submit" value="Add" class="btn btn-xs btn-success" />
+
+</form>
+

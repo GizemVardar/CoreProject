@@ -1,0 +1,17 @@
+﻿@model Demo.Core.MvcUI.Models.CartSummaryViewModel
+<ul class="dropdown-menu">
+    @foreach(var item in Model.Cart.CartLine)
+    {
+        <li>
+            <a>@item.Products.ProductName<span class="badge">@item.Quantity</span></a>
+        </li>
+    }
+    <li role="separator"class="devider"></li>
+    <li>
+        <a><span class"glyphicon glyphicon-align-left glyphicon glyphicon-shopping-cart" aria-hidden="true">@Model.Cart.ToString()</span></a>
+    </li>
+    <li role="separator" class="divider"></li>
+    <li>
+        <a asp-controller="Cart"asp-action="List">Goto Cart Details</a>
+    </li>
+</ul>

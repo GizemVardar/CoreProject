@@ -1,0 +1,37 @@
+﻿@model Demo.Core.MvcUI.Models.ProductListViewModel
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout.cshtml";
+}
+
+<h2>Product List</h2>
+<a class="btn btn-xs btn-success"
+asp-controller="Admin"
+asp-action="Add"> Add a new product</a>
+<div>
+    <table class="table table-responsive">
+    <tr>
+        <td>Product Name</td>
+        <td>Unit Price</td>
+        <td>Unit In Stock</td>
+        <td></td>
+        <td></td>
+    </tr>
+    @foreach (var item in Model.Products)
+        {
+            <tr>
+                <td>@item.ProductName</td>
+                <td>@item.UnitPrice</td>
+                <td>@item.UnitsInStock</td>
+                <td>
+                    <a class="btn btn-xs btn-info" asp-controller="Admin" asp-action="Update" asp-route-product="@item.ProductID">Update</a>
+                 </td>
+                 <td>
+                     <a class="btn btn-xs btn-danger" asp-controller="Admin" asp-action="Delete" asp-route-productId="@item.ProductID">Delete</a>
+                 </td>
+
+            </tr>
+        }
+        </table>
+</div>
+
